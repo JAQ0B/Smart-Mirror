@@ -1,0 +1,28 @@
+Lave et python til træning af modellen. så skal den gemmes i mappen, hvortil ""self.assistant = self.load_model("F:\Programming\Smart_Mirror\intents_model.joblib")"" kan bruges til at loade.
+
+
+
+Kigge på API til weather.com
+Kigge på API til chatGPT, bruge den til at svare på ting hvis man ikke forstår hvad der bliver spurgt om.
+Test om det virker med Mic
+Prøve at overføre det til raspberrypi og få det til at virke der.
+Sætte widgets op, se om vi kan få skærmen til at virke som den skal først på pc derefter på raspberrypi.
+Se om man kan få den til at ændre på layout afhængigt af hvad man siger, fx "flyt vejret op i toppen til venstre." så skal den gøre det på spejlet.
+Se om man kan importe sin kalender og få den vist der oppe.
+
+Fremtid (ikke nødvendigt men sejt.)
+Få en lille AI figur til at være repræsenteret på spejlet, som regere når man snakker til den.
+Få den til at kunne vise noget af det tøj man har givet den, til at starte med kunne det bare være den skulle vise billederne man har givet til den.
+    herefter kunne man se på at spørge en AI om en kombination hvis man ejer dette kombineret med vejret og begivenheden også bare få den til at sige kombinationen.
+    Længere nede af vejen kunne man så få den til at vise hvad det er man så vil have på med en generativ AI.
+
+
+
+Elevenlabs github: https://github.com/elevenlabs/elevenlabs-python
+    tutorial: https://www.youtube.com/watch?v=w5uT7mgGef0
+
+
+Alternativ til at lave egen AI til at forstå hvad man siger så er dette chatgpt: https://www.youtube.com/watch?v=hGNX6G7AAoM
+
+nieuralnine link https://github.com/NeuralNine/neuralintents/blob/master/neuralintents/examples/custom_architecture/example.py
+

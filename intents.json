@@ -1,0 +1,28 @@
+{
+    "intents" : [
+        {
+            "tag" : "greeting",
+            "patterns":[
+                "Hi",
+                "Hey",
+                "what's up",
+                "Hey how are you doing?"
+            ],
+            "responses":[
+                "Hey Sir!",
+                "What can i do for you?"
+            ]
+        },
+        {
+            "tag" : "SwitchSide2",
+            "patterns":[
+                "Create a file",
+                "Create a new file"
+            ],
+            "responses": []
+        }
+
+    ]
+
+
+}
