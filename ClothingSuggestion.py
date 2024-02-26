@@ -91,6 +91,37 @@ class OutfitSelector:
                     bbox=dict(facecolor='white', alpha=0.8, edgecolor='none', pad=2))
 
         plt.show()
+    
+    def save_outfit_collage(self, outfit, save_path):
+        fig, axes = plt.subplots(1, len(outfit), figsize=(12, 4))
+        fig.suptitle('Outfit of the Day', fontsize=16, weight='bold')
+        plt.subplots_adjust(wspace=0.3)
+
+        max_name_length = 25  # Maximum length for the name of the clothing item
+        max_fontsize = 12  # Maximum font size for the title
+
+        for ax, item in zip(axes, outfit):
+            img = Image.open(item.image_path)
+            ax.imshow(img)
+            ax.axis('off')
+
+            # Truncate the name of the clothing item if it exceeds the maximum length
+            truncated_name = item.name[:max_name_length] + '...' if len(item.name) > max_name_length else item.name
+
+            # Calculate font size based on the length of the truncated name
+            fontsize = max_fontsize - len(truncated_name) * 0.8
+            fontsize = max(fontsize, 8)  # Ensure minimum font size
+
+            ax.set_title(truncated_name, fontsize=fontsize, weight='bold', pad=2)
+            ax.set_aspect('auto')
+
+            # Add transparent overlay with text for better readability
+            ax.text(0.5, 0.5, item.subCategory, ha='center', va='center', fontsize=8, weight='bold',
+                    bbox=dict(facecolor='white', alpha=0.8, edgecolor='none', pad=2))
+
+        plt.savefig(save_path, bbox_inches='tight')  # Save the collage
+        plt.close()  # Close the plot to release resources
+
 
 
 # Example usage:

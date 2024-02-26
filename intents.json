@@ -14,12 +14,65 @@
             ]
         },
         {
-            "tag" : "SwitchSide2",
+            "tag" : "Switch to clothing",
             "patterns":[
-                "Create a file",
-                "Create a new file"
+                "Switch to Clothing",
+                "Switch to side 1",
+                "Go to clothing",
+                "Go to side 1",
+                "Change to clothing",
+                "Change to side 1",
+                "Change page to clothing"
             ],
-            "responses": []
+            "responses": ["Clothing"]
+        },
+        {
+            "tag" : "Switch to music",
+            "patterns":[
+                "Switch to music",
+                "Switch to side 2",
+                "Go to music",
+                "Go to side 2",
+                "Change to music",
+                "Change to side 2",
+                "Change page to music"
+            ],
+            "responses": ["Music"]
+        },
+        {
+            "tag" : "Switch to weather",
+            "patterns":[
+                "Switch to weather",
+                "Switch to side 3",
+                "Go to weather",
+                "Go to side 3",
+                "Change to weather",
+                "Change to side 3",
+                "Change page to weather"
+            ],
+            "responses": ["Weather"]
+        },
+        {
+            "tag" : "Switch to home",
+            "patterns":[
+                "Switch to Home",
+                "Go to Home",
+                "Change to home",
+                "Change page to home"
+            ],
+            "responses": ["Home"]
+        },
+        {
+            "tag" : "GenAI response",
+            "patterns":[ // indsæt så alle spørgsmål bliver opfanget.
+                "Hi",
+                "Hey",
+                "what's up",
+                "Hey how are you doing?"
+            ],
+            "responses":[
+                "GenAI response"
+            ]
         }
 
     ]

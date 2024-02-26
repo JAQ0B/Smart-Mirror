@@ -2,11 +2,26 @@ import sys
 import threading
 import tkinter as tk
 import speech_recognition as sr
+from Genai import GenAI
 
 from neuralintents import BasicAssistant
 
 from elevenlabs import generate, play, set_api_key
 set_api_key("4b0dfa6d6503f2de4be1ab9839e2aea8")
+
+GenAI = GenAI()
+
+if response == "GenAI response":
+    GenAI.chat(text)
+
+elif response == "Clothing":
+    
+elif response == "Music":
+    
+elif response == "Weather":
+    
+elif response == "Home":
+    
 
 wake_word = "hey jake"
 
@@ -16,10 +31,10 @@ class Assistant:
     def __init__(self):
         self.recognizer = sr.Recognizer()
 
-        self.speak("Hi, Jacob.")
+        self.speak("Starting...")
 
         self.assistant = BasicAssistant("F:\Programming\Smart_Mirror\intents.json")
-        self.assistant.fit_model(epochs=50)
+        self.assistant.load_model('SmartMirror.keras')
 
         self.root = tk.Tk()
         self.label = tk.Label(text="O", font=("Arial", 120, "bold"))
@@ -32,10 +47,6 @@ class Assistant:
 
         self.root.mainloop()
 
-
-    # def create_file(self):
-    #      with open("somefile.txt", "w") as f:
-    #          f.write("HELLO WORLD!")
 
 
     def exit_program(self):
