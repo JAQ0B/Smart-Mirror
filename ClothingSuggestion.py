@@ -64,8 +64,8 @@ class OutfitSelector:
 
     
     def save_outfit_collage(self, outfit, save_path):
-        fig, axes = plt.subplots(1, len(outfit), figsize=(12, 4))
-        fig.suptitle('Outfit of the Day', fontsize=16, weight='bold')
+        fig, axes = plt.subplots(1, len(outfit), figsize=(12, 4), facecolor='black')  # Set facecolor to black
+        fig.suptitle('Outfit of the Day', fontsize=16, weight='bold', color='white')  # Set title color to white
         plt.subplots_adjust(wspace=0.3)
 
         max_name_length = 25  # Maximum length for the name of the clothing item
@@ -83,14 +83,14 @@ class OutfitSelector:
             fontsize = max_fontsize - len(truncated_name) * 0.8
             fontsize = max(fontsize, 8)  # Ensure minimum font size
 
-            ax.set_title(truncated_name, fontsize=fontsize, weight='bold', pad=2)
+            ax.set_title(truncated_name, fontsize=fontsize, weight='bold', pad=2, color='white')  # Set title color to white
             ax.set_aspect('auto')
 
             # Add transparent overlay with text for better readability
             ax.text(0.5, 0.5, item.subCategory, ha='center', va='center', fontsize=8, weight='bold',
-                    bbox=dict(facecolor='white', alpha=0.8, edgecolor='none', pad=2))
+                    color='white', bbox=dict(facecolor='black', alpha=0.8, edgecolor='none', pad=2))  # Set text color to white and background to black
 
-        plt.savefig(save_path, bbox_inches='tight')  # Save the collage
+        plt.savefig(save_path, bbox_inches='tight', facecolor='black')  # Save the collage with black background
         plt.close()  # Close the plot to release resources
 
 
