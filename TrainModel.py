@@ -4,5 +4,6 @@ assistant = BasicAssistant("F:\Programming\Smart_Mirror\intents.json", model_nam
 
 
 assistant.fit_model(epochs=100)
+print("Done Fitting")
 assistant.save_model()
 

@@ -3,26 +3,13 @@ import threading
 import tkinter as tk
 import speech_recognition as sr
 from Genai import GenAI
+GenAI = GenAI()
 
 from neuralintents import BasicAssistant
 
 from elevenlabs import generate, play, set_api_key
-set_api_key("4b0dfa6d6503f2de4be1ab9839e2aea8")
-
-GenAI = GenAI()
-
-if response == "GenAI response":
-    GenAI.chat(text)
-
-elif response == "Clothing":
+set_api_key("af4675173421c780fd46793f99918c1c") #API TIL DK: 4b0dfa6d6503f2de4be1ab9839e2aea8 API TIL US: af4675173421c780fd46793f99918c1c
     
-elif response == "Music":
-    
-elif response == "Weather":
-    
-elif response == "Home":
-    
-
 wake_word = "hey jake"
 
 class Assistant:
@@ -33,8 +20,8 @@ class Assistant:
 
         self.speak("Starting...")
 
-        self.assistant = BasicAssistant("F:\Programming\Smart_Mirror\intents.json")
-        self.assistant.load_model('SmartMirror.keras')
+        self.assistant = BasicAssistant("F:\Programming\Smart_Mirror\intents.json", model_name='SmartMirror')
+        self.assistant.load_model()
 
         self.root = tk.Tk()
         self.label = tk.Label(text="O", font=("Arial", 120, "bold"))
@@ -70,7 +57,7 @@ class Assistant:
             text = self.recognizer.recognize_google(audio, language='en-in').lower()
             if "no" in text:
                 return False
-            else:
+            elif "yes" in text:
                 return True
 
     def TakeCommand(self):
@@ -83,19 +70,24 @@ class Assistant:
             print("text: ")
             print(text)
             if text == "stop":
-                self.speak("Bye")
-                self.root.destroy()
-                sys.exit()
+                self.exit_program()
             else:
                 if text is not None:
                     response = self.assistant.process_input(text)
                     print("response: ")
                     print(response)
-                    if response is not None:
-                        self.speak(response)
-                if text is "SwitchToSide2":
-                    with open("config.js", "w") as f:
-                        f.write("")        
+
+                    if response in "GenAI response":
+                        self.speak(GenAI.chat(text))
+                    elif response == "Clothing":
+                        print("Switchiing to clothing")
+                    elif response == "Music":
+                        print("Switchiing to music")
+                    elif response == "Weather":
+                        print("Switching to weather")
+                    elif response == "Home":
+                        print("Switching to Home")
+        
                 self.label.config(fg="black")
 
     def run_assistant(self):

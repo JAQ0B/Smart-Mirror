@@ -13,7 +13,7 @@ class GenAI:
 
     def chat(self, message):
         response = chat.send_message(message)
-        return response
+        return response.text
 
 
 

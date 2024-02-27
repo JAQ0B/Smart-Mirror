@@ -1,19 +1,6 @@
 {
     "intents" : [
         {
-            "tag" : "greeting",
-            "patterns":[
-                "Hi",
-                "Hey",
-                "what's up",
-                "Hey how are you doing?"
-            ],
-            "responses":[
-                "Hey Sir!",
-                "What can i do for you?"
-            ]
-        },
-        {
             "tag" : "Switch to clothing",
             "patterns":[
                 "Switch to Clothing",
@@ -64,11 +51,10 @@
         },
         {
             "tag" : "GenAI response",
-            "patterns":[ // indsæt så alle spørgsmål bliver opfanget.
-                "Hi",
-                "Hey",
-                "what's up",
-                "Hey how are you doing?"
+            "patterns":[ 
+                "Who is *?", 
+                "What is *?", 
+                "Tell me about *?"
             ],
             "responses":[
                 "GenAI response"

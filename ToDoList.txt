@@ -1,10 +1,7 @@
 Lave et python til træning af modellen. så skal den gemmes i mappen, hvortil ""self.assistant = self.load_model("F:\Programming\Smart_Mirror\intents_model.joblib")"" kan bruges til at loade.
 
 
-
-Kigge på API til weather.com
 Kigge på API til chatGPT, bruge den til at svare på ting hvis man ikke forstår hvad der bliver spurgt om.
-Test om det virker med Mic
 Prøve at overføre det til raspberrypi og få det til at virke der.
 Sætte widgets op, se om vi kan få skærmen til at virke som den skal først på pc derefter på raspberrypi.
 Se om man kan få den til at ændre på layout afhængigt af hvad man siger, fx "flyt vejret op i toppen til venstre." så skal den gøre det på spejlet.
