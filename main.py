@@ -1,6 +1,7 @@
 import sys
 import threading
 import tkinter as tk
+from tkinter import PhotoImage
 import speech_recognition as sr
 from Genai import GenAI
 GenAI = GenAI()
@@ -27,7 +28,9 @@ class Assistant:
         self.assistant.load_model()
 
         self.root = tk.Tk()
-        self.label = tk.Label(text="", font=("Arial", 120, "bold"))
+        self.image1 = PhotoImage(file='chatbot1.png')
+        self.image2 = PhotoImage(file='chatbot2.png')      
+        self.label = tk.Label(image=self.image1)
         self.label.pack()
 
         self.exit_button = tk.Button(self.root, text="Exit", command=self.exit_program)
@@ -107,15 +110,15 @@ class Assistant:
 
                     # Wake word detection using a dedicated library or a more advanced method
                     if wake_word in self.recognizer.recognize_google(audio, language='en-in').lower():
-                        self.label.config(fg="red")
+                        self.label.config(image=self.image2)
                         
                         self.TakeCommand()
                         while self.MoreHelp() == True:
                             self.TakeCommand()
-                        self.label.config(fg="black")
+                        self.label.config(image=self.image1)
 
             except:
-                self.label.config(fg="black")
+                self.label.config(image=self.image1)
                 continue
 
 
