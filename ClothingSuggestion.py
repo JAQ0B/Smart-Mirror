@@ -63,7 +63,7 @@ class OutfitSelector:
         return topwear, bottomwear, footwear, watch, accessory
 
     
-    def save_outfit_collage(self, outfit, save_path):
+    def save_outfit_collage(self, outfit):
         fig, axes = plt.subplots(1, len(outfit), figsize=(12, 4), facecolor='black')  # Set facecolor to black
         fig.suptitle('Outfit of the Day', fontsize=16, weight='bold', color='white')  # Set title color to white
         plt.subplots_adjust(wspace=0.3)
@@ -90,28 +90,25 @@ class OutfitSelector:
             ax.text(0.5, 0.5, item.subCategory, ha='center', va='center', fontsize=8, weight='bold',
                     color='white', bbox=dict(facecolor='black', alpha=0.8, edgecolor='none', pad=2))  # Set text color to white and background to black
 
-        plt.savefig(save_path, bbox_inches='tight', facecolor='black')  # Save the collage with black background
+        plt.savefig('Outfit.png', bbox_inches='tight', facecolor='black')  # Save the collage with black background
         plt.close()  # Close the plot to release resources
 
 
+    def recommend_outfit(self, weather, gender, usage):
+        # Select outfit based on gender, usage, and weather
+        topwear, bottomwear, footwear, watch, accessory = self.select_outfit(gender, usage, weather)
 
-# Example usage:
-outfit_selector = OutfitSelector('clothing_dataset.csv')
+        if topwear and bottomwear and footwear and watch and accessory:
+            outfit = [topwear, bottomwear, footwear, watch, accessory]
+            print("Recommended outfit for today's", gender, usage, "and", weather, "weather:")
+            for item in outfit:
+                print("Item:", item.name)
+                print("Category:", item.subCategory)
+            self.save_outfit_collage(outfit)
+        else:
+            print("No suitable outfit found for today's", gender, usage, "and", weather, "weather.")
 
-# Get today's weather (assumed here)
-weather_today = 'Fall'
-gender = 'Men'
-usage = 'Sports'
-
-# Select outfit based on gender, usage, and weather
-topwear, bottomwear, footwear, watch, accessory = outfit_selector.select_outfit(gender, usage, weather_today)
-
-if topwear and bottomwear and footwear and watch and accessory:
-    outfit = [topwear, bottomwear, footwear, watch, accessory]
-    print("Recommended outfit for today's", gender, usage, "and", weather_today, "weather:")
-    for item in outfit:
-        print("Item:", item.name)
-        print("Category:", item.subCategory)
-    outfit_selector.save_outfit_collage(outfit, 'outfitPic')
-else:
-    print("No suitable outfit found for today's", gender, usage, "and", weather_today, "weather.")
+#Run the code if run directly
+if __name__ == "__main__":
+    outfit_selector = OutfitSelector('clothing_dataset.csv')
+    outfit_selector.recommend_outfit('Fall', 'Men', 'Casual')

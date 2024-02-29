@@ -9,7 +9,10 @@ from neuralintents import BasicAssistant
 
 from elevenlabs import generate, play, set_api_key
 set_api_key("af4675173421c780fd46793f99918c1c") #API TIL DK: 4b0dfa6d6503f2de4be1ab9839e2aea8 API TIL US: af4675173421c780fd46793f99918c1c
-    
+
+from SendRequest import PageController
+page_controller = PageController()
+
 wake_word = "hey jake"
 
 class Assistant:
@@ -24,7 +27,7 @@ class Assistant:
         self.assistant.load_model()
 
         self.root = tk.Tk()
-        self.label = tk.Label(text="O", font=("Arial", 120, "bold"))
+        self.label = tk.Label(text="", font=("Arial", 120, "bold"))
         self.label.pack()
 
         self.exit_button = tk.Button(self.root, text="Exit", command=self.exit_program)
@@ -77,18 +80,21 @@ class Assistant:
                     print("response: ")
                     print(response)
 
-                    if response in "GenAI response":
+                    if response == "GenAI response":
                         self.speak(GenAI.chat(text))
                     elif response == "Clothing":
-                        print("Switchiing to clothing")
+                        print("Switching to clothing")
+                        page_controller.change_page(3)
                     elif response == "Music":
-                        print("Switchiing to music")
+                        print("Switching to music")
+                        page_controller.change_page(2)
                     elif response == "Weather":
                         print("Switching to weather")
+                        page_controller.change_page(4)
                     elif response == "Home":
                         print("Switching to Home")
+                        page_controller.change_page(1)
         
-                self.label.config(fg="black")
 
     def run_assistant(self):
          while True:
