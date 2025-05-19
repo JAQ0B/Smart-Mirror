@@ -1,7 +1,7 @@
 # 🪞 Smart Mirror – AI-Powered Clothing Assistant  
 *Final Exam Project – Technology A – Vejle Technical Gymnasium*
 
-> A semi-functional smart mirror prototype combining AI, voice control, outfit suggestions, and a modular display – built by a 4-person team and awarded **Grade 12 (highest possible in Denmark)**.
+> A semi-functional smart mirror prototype combining AI, voice control, outfit suggestions, and a modular display – built during final exams and awarded **Grade 12 (highest possible in Denmark)**.
 
 ---
 
@@ -21,7 +21,7 @@
 
 ## 🚀 Overview
 
-This project was our final exam for the *Technology A* subject in HTX (Vejle Technical Gymnasium).  
+This project was our final exam for the *Technology A* class in HTX (Vejle Tekniske Gymnasium).  
 The goal was to build an **intelligent smart mirror** that could help users pick clothes efficiently, reduce unused wardrobe items, and provide a luxury-level, modern tech experience.
 
 The system is divided into two main parts:
@@ -36,7 +36,7 @@ Due to hardware limitations on the Raspberry Pi, the AI voice assistant runs on 
 ### 🍓 Raspberry Pi (Smart Mirror + Control System)
 The Raspberry Pi runs the **MagicMirror²** software, which displays time, weather, outfit images, and more. It also:
 - Receives API commands from the AI assistant or mobile phone.
-- Displays suggested outfits using a Flask-based interface and a custom image generator.
+- Displays suggested outfits using a custom image generator.
 
 > ⚠️ Due to a limited project budget, we only had access to a **Raspberry Pi 3**, which could not handle the AI load. The AI was therefore offloaded to a PC. **With a Raspberry Pi 4 or 5, everything could have run directly on the Pi as originally intended.**
 
@@ -45,30 +45,26 @@ The Raspberry Pi runs the **MagicMirror²** software, which displays time, weath
 The mirror hardware itself was assembled using materials funded by the school. Since they covered all expenses, the final physical product was handed over after the exam. This project is no longer being developed, but the code remains available for educational purposes.
 
 
-## 🧠 Key Features
-
-- 🎤 **Voice Assistant (Runs on PC):**
-  - Listens via a Tkinter interface with animated robot icon.
-  - Uses **Google Gemini Pro** to generate answers.
-  - Text-to-speech output with **ElevenLabs**.
-  - Recognizes commands via a trained intent model (e.g. “change to music page”).
-
-- 👕 **Outfit Suggestion Module (Raspberry Pi):**
-  - Displays a random outfit collage generated from a filtered Kaggle dataset.
-  - Saves the suggested outfit image to the folder displayed on the mirror.
-
-- 📱 **Mobile/Web Control (Flask API):**
-  - Runs locally on Raspberry Pi.
-  - Allows page changes and interactions through a mobile app or remote interface.
-
----
-
 ## 💾 Installation & Usage
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourname/smart-mirror.git
-   cd smart-mirror```
+   git clone https://github.com/JAQ0B/Smart-Mirror.git
+   cd Smart-Mirror´´´```
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt´´´
+
+3. **Set up environment variables:**
+- Copy `.env.example` to `.env`
+- Add your Gemini and ElevenLabs API keys.
+
+4. **Run `mm.sh` to start everything:**
+    ```bash
+    chmod +x mm.sh
+    ./mm.sh´´´
+
 
 
 
