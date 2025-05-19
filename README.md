@@ -65,6 +65,10 @@ The mirror hardware itself was assembled using materials funded by the school. S
     chmod +x mm.sh
     ./mm.sh
 
+5. **Run `mm.sh` on startup:**
+    ```bash
+    crontab -e
+    @reboot /home/pi/Smart-Mirror/mm.sh
 
 ## 🧥 Outfit Dataset
 
@@ -126,7 +130,7 @@ Below are simplified diagrams showing the software components split across the P
 
 The project was documented in a full 150+ page report for the final exam. It includes research, design decisions, budget, target audience analysis, technical development, and evaluation.
 
-📄 [Download Teknologi A – Eksamensprojekt (PDF)](https://github.com/JAQ0B/TechnologyProjekt-SmartMirror/blob/main/Report/Teknologi%20A%20-%20Eksamensprojekt.pdf)
+📄 [Teknologi A – Eksamensprojekt (PDF)](https://github.com/JAQ0B/TechnologyProjekt-SmartMirror/blob/main/Report/Teknologi%20A%20-%20Eksamensprojekt.pdf)
 
 ---
 
@@ -152,4 +156,4 @@ See [LICENSE](./LICENSE) for more details.
 - Rose Marie Bjerre  
 - Lars Pedersen  
 
-*Developed at Vejle Technical Gymnasium – Spring 2024*
+*Developed at Vejle Tekniske Gymnasium – Spring 2024*
