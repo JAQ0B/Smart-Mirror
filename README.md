@@ -21,13 +21,29 @@
 
 ## 🚀 Overview
 
-This smart mirror was designed to help users **reduce time spent choosing clothing** while minimizing unused garments in the wardrobe. The mirror provides random daily outfit suggestions and responds to user input via voice and mobile control.
+This project was our final exam for the *Technology A* subject in HTX (Vejle Technical Gymnasium).  
+The goal was to build an **intelligent smart mirror** that could help users pick clothes efficiently, reduce unused wardrobe items, and provide a luxury-level, modern tech experience.
 
-It was developed for the final exam in “Technology A” with a strong focus on luxury and real user needs – primarily targeting **tech-savvy adults aged 40–60** who appreciate time-saving, intelligent home solutions.
+The system is divided into two main parts:
 
-> ⚠️ **Note:** Due to a limited budget, we could only borrow a Raspberry Pi 3, which could not run both the AI and the MagicMirror software at the same time. However, **Raspberry Pi 4 or 5 models** would be capable of running the complete system as intended.
+### 💻 PC (AI Assistant)
+Due to hardware limitations on the Raspberry Pi, the AI voice assistant runs on a standard computer. It:
+- Listens to the user through a GUI.
+- Uses **Google Gemini Pro** to answer questions and the Neuralintents library to detect commands.
+- Speaks back using **ElevenLabs Text-to-Speech**.
+- Sends commands to the Raspberry Pi (like changing pages on the mirror).
+
+### 🍓 Raspberry Pi (Smart Mirror + Control System)
+The Raspberry Pi runs the **MagicMirror²** software, which displays time, weather, outfit images, and more. It also:
+- Receives API commands from the AI assistant or mobile phone.
+- Displays suggested outfits using a Flask-based interface and a custom image generator.
+
+> ⚠️ Due to a limited project budget, we only had access to a **Raspberry Pi 3**, which could not handle the AI load. The AI was therefore offloaded to a PC. **With a Raspberry Pi 4 or 5, everything could have run directly on the Pi as originally intended.**
 
 ---
+
+The mirror hardware itself was assembled using materials funded by the school. Since they covered all expenses, the final physical product was handed over after the exam. This project is no longer being developed, but the code remains available for educational purposes.
+
 
 ## 🧠 Key Features
 
@@ -77,7 +93,7 @@ The smart mirror interface is powered by [MagicMirror²](https://github.com/Mich
 
 ### 🧱 Installed Modules and Their Purpose
 
-As configured in our `config.js` (planned to be shared via Pastebin or a `MagicMirror/config.js` folder):
+As configured in our [config.js](https://github.com/JAQ0B/TechnologyProjekt-SmartMirror/blob/main/MagicMirror/config.js) :
 
 - **MMM-Remote-Control** – Enables remote API control of MagicMirror.
 - **MMM-pages** – Organizes the display into multiple pages with different layouts.
@@ -116,7 +132,7 @@ Below are simplified diagrams showing the software components split across the P
 
 The project was documented in a full 150+ page report for the final exam. It includes research, design decisions, budget, target audience analysis, technical development, and evaluation.
 
-📄 [Download Teknologi A – Eksamensprojekt (PDF)](./Teknologi%20A%20-%20Eksamensprojekt.pdf)
+📄 [Download Teknologi A – Eksamensprojekt (PDF)](https://github.com/JAQ0B/TechnologyProjekt-SmartMirror/blob/main/Report/Teknologi%20A%20-%20Eksamensprojekt.pdf)
 
 ---
 
