@@ -1,0 +1,11 @@
+flask
+requests
+tk
+speechrecognition
+pillow
+matplotlib
+google-generativeai
+neuralintents
+python-dotenv
+tkinter
+threading
