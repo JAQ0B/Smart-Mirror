@@ -143,7 +143,7 @@ let config = {
 			// See 'Configuration options' for more information.
 			location: "Vejle",
 			locationID: "2610601", 
-			appid: "7e6c6f89def32c223aaae295ad83515b", 
+			appid: "XXX", 
 			preferences: [
 				{
 				    name: "Winter jacket",
