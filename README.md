@@ -50,22 +50,20 @@ The mirror hardware itself was assembled using materials funded by the school. S
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/JAQ0B/Smart-Mirror.git
-   cd Smart-Mirror´´´```
+   cd Smart-Mirror
 
 2. **Install dependencies:**
    ```bash
-   pip install -r requirements.txt´´´
+   pip install -r requirements.txt
 
 3. **Set up environment variables:**
-- Copy `.env.example` to `.env`
-- Add your Gemini and ElevenLabs API keys.
+    - Copy `.env.example` to `.env`
+    - Add your Gemini and ElevenLabs API keys.
 
 4. **Run `mm.sh` to start everything:**
     ```bash
     chmod +x mm.sh
-    ./mm.sh´´´
-
-
+    ./mm.sh
 
 
 ## 🧥 Outfit Dataset
